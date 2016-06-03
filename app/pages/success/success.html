@@ -1,0 +1,34 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name='menu'></ion-icon>
+  </button>
+  <ion-title>
+    跟投成功
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="has-header">
+
+  <ion-card>
+
+    <ion-card-header>
+      跟投成功
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Add card content here! -->
+       此次跟投了 {{followNum}} 份
+       <ion-row no-padding>
+        <ion-col text-center>
+          <button small (click)="back()">
+            <ion-icon name="home"></ion-icon>
+            回到首页
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

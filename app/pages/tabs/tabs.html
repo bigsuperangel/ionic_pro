@@ -1,5 +1,5 @@
-<ion-tabs>
-  <ion-tab [root]="tab1Root" tabTitle="Tab 1" tabIcon="pulse"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Tab 2" tabIcon="chatbubbles"></ion-tab>
-  <ion-tab [root]="tab3Root" tabTitle="Tab 3" tabIcon="cog"></ion-tab>
+<ion-tabs [selectedIndex]="mySelectedIndex">
+  <ion-tab [root]="myFocus" tabTitle="我的关注" tabIcon="pulse"></ion-tab>
+  <ion-tab [root]="searchProject" tabTitle="寻找项目" tabIcon="chatbubbles"></ion-tab>
+  <ion-tab [root]="personalCenter" tabTitle="个人中心" tabIcon="cog"></ion-tab>
 </ion-tabs>

@@ -1,0 +1,78 @@
+<ion-navbar *navbar hideBackButton>
+  <ion-title>用户登陆</ion-title>
+<!--     <ion-buttons end>
+<button (click)="dismiss()">
+  <span primary showWhen="ios">Cancel</span>
+  <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+</button>
+  </ion-buttons> -->
+</ion-navbar>
+
+<ion-content class="has-header">
+    <form [ngFormModel]="f" (submit)="doLogin(f.value)">
+    <ion-list>
+
+        <ion-item [class.error]="!account.valid && account.touched">
+            <ion-label fixed>用户名</ion-label>
+            <ion-input type="text" value="" [ngFormControl]="account"></ion-input>
+        </ion-item>
+        <button danger clear item-left *ngIf="account.hasError('required') && account.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>用户名必须填写!</div>
+        </button>
+        <button danger clear item-left *ngIf="account.hasError('minlength') && account.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>用户名最小长度是2!</div>
+        </button>
+        <button danger clear item-left *ngIf="account.hasError('maxlength') && account.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>用户名最大长度是10!</div>
+        </button>
+        <button danger clear item-left *ngIf="account.hasError('checkFirstCharacterValidator') && account.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>用户名不能以数字开头!</div>
+        </button>
+
+        <ion-item [class.error]="!pwd.valid && pwd.touched">
+            <ion-label fixed>用户密码</ion-label>
+            <ion-input type="password" value="" [ngFormControl]="pwd"></ion-input>
+        </ion-item>
+        <button danger clear item-left *ngIf="pwd.hasError('required') && pwd.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>密码必须填写!</div>
+        </button>
+        <button danger clear item-left *ngIf="pwd.hasError('minlength') && pwd.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>密码最小长度是6!</div>
+        </button>
+        <button danger clear item-left *ngIf="pwd.hasError('maxlength') && pwd.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>密码最大长度是16!</div>
+        </button>
+
+        <ion-item [class.error]="!imgCode.valid && imgCode.touched">
+            <ion-label fixed>验证码</ion-label>
+            <ion-input type="text" value="" [ngFormControl]="imgCode"></ion-input>
+            <button item-right type="button" clear>
+              <img [src]="imgUrl" (click)="onClick($event)">
+            </button>
+        </ion-item>
+        <button danger clear item-left *ngIf="imgCode.hasError('required') && imgCode.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>验证码必须填写!</div>
+        </button>
+        <button danger clear item-left *ngIf="imgCode.hasError('minlength') && imgCode.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>验证码最小长度是4!</div>
+        </button>
+        <button danger clear item-left *ngIf="imgCode.hasError('maxlength') && imgCode.touched">
+          <ion-icon name="backspace"></ion-icon>
+          <div>验证码最大长度是4!</div>
+        </button>
+
+    </ion-list>
+    <div padding>
+        <button primary block class="custom-button" type="submit" [disabled]="!f.valid">登陆</button>
+    </div>
+    </form>
+</ion-content>

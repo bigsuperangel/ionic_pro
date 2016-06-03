@@ -1,0 +1,55 @@
+<ion-navbar *navbar class="show-navbar">
+  <ion-title>项目详情</ion-title>
+</ion-navbar>
+
+<ion-content class="has-header components-demo cards-bg">
+
+  <ion-card>
+
+    <img src="{{crowdfund.crowdfundSurface}}"/>
+
+    <ion-card-content>
+      <h2 class="card-title">
+        {{crowdfund.title | slice:0:8}}
+      </h2>
+      <p>
+        {{crowdfund.describes}}
+      </p>
+    </ion-card-content>
+
+    <ion-row no-padding>
+      <ion-col>
+        <button clear small danger>
+          <ion-icon name='yen'></ion-icon>
+          {{crowdfund.borrowMoney}}
+        </button>
+      </ion-col>
+      <ion-col text-center>
+        <button clear small danger>
+          <ion-icon name='musical-notes'></ion-icon>
+          {{crowdfund.currentMoney}}
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button clear small danger>
+          <ion-icon name='contacts'></ion-icon>
+          {{crowdfund.followPerson}}
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row no-padding>
+      <ion-col text-center>
+        <button small (click)="follow()">
+          <ion-icon name="hand"></ion-icon>
+          跟投
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+
+</ion-content>
+
+

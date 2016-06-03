@@ -1,0 +1,54 @@
+<ion-navbar *navbar hideBackButton class="show-navbar">
+  <button menuToggle>
+    <ion-icon name='menu'></ion-icon>
+  </button>
+  <ion-title>个人中心</ion-title>
+</ion-navbar>
+
+<ion-content class="has-header components-demo cards-bg social-cards">
+
+<ion-card>
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{user?.headPic}}">
+    </ion-avatar>
+    <h2>{{user?.customerName}}</h2>
+    <p>{{user?.createTime | date}}</p>
+  </ion-item>
+
+  <img src="img/advance-card-bttf.png">
+
+  <ion-card-content>
+    <p>{{user?.des}}</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='thumbs-up'></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name='text'></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>
